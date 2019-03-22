@@ -1,5 +1,10 @@
 import React from "react";
+import { firebaseSignUp } from "../networking/api";
 class Login extends React.Component {
+  private signUpWithFirebase() {
+    firebaseSignUp("donovan.cotter@detroitlabs.com", "test1234!");
+  }
+
   private renderInputFields() {
     return (
       <div className="login-content-container">
@@ -20,6 +25,7 @@ class Login extends React.Component {
   }
 
   render() {
+    this.signUpWithFirebase();
     return this.renderInputFields();
   }
 }
